@@ -1,5 +1,5 @@
 package introduction;
-
+import java.util.Scanner;
 class Car{
 	int speed;
 	float regularPrice;
@@ -40,11 +40,25 @@ class Car{
     public class assgnment2 {
 
 	  public static void main(String[] args) {
-		Car audi= new Car(130,7500000,"red");
-		int truckweight=2400;
-		Truck mahindra = new Truck(80,0,"grey",truckweight);
-		mahindra.setSaleprice(1800000);
-		mahindra = new Truck(80,mahindra.getSaleprice(),"grey",truckweight);
+		Scanner sc1 = new Scanner(System.in);
+		Scanner sc2 = new Scanner(System.in);
+		System.out.println("Enter speed of the audi:- ");
+		int speed1 = sc1.nextInt();  
+		System.out.println("Enter price of the audi");
+		int price1 = sc1.nextInt();	
+		System.out.println("Enter color of car 1:- ");
+		String color1 = sc1.next();
+	    System.out.println("Enter weight of mahindra truck:- ");
+		int truckweight=sc2.nextInt();
+		System.out.println("Enter speed of truck mahindra:- ");
+		int speed2 = sc2.nextInt();
+		System.out.println("Enter price of truck mahindra:- ");
+		int price2 = sc2.nextInt();
+		System.out.println("Enter color of Truck mahindra:- ");
+		String color2 = sc2.next();
+		Car audi= new Car(speed1,price1,color1);
+		Truck mahindra = new Truck(speed2,price2,color2,truckweight);
+		mahindra = new Truck(80,mahindra.getSaleprice(),color2,truckweight);
 		audi.display();
 		mahindra.display();
 	}
